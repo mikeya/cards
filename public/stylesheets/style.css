@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.menu{
+	float:left;
+	width:20%;
+}
+
+.container{
+	float:left;
+	width:80%;
+}
+
+.card{
+	width:33.33333%;
+	min-height:150px;
+	float:left;
+	border: 1px solid black;
+}
+
+* {
+	box-sizing:border-box;
+}

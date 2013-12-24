@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	div.menu
+		ul
+			li
+				form(action="/newCategory", method="post")
+					label(for="name") Category
+					input(name="name")
+					input(type='hidden', name='parentId', value='0')
+					button(type="submit") Submit
+					
+			each category, index in categories
+				li
+					a(href=category._id)=category.name
+	div.container
+		div.card
+			form(action="/newCard", method="post")
+				label(for="content") Content
+				textarea(name="content")
+				button(type="submit") Submit
+				if selectedCategory
+					input(type='hidden', name='categoryId', value=selectedCategory._id)
+		if selectedCategory
+			each card, index in selectedCategory.cards
+				div.card
+					p=card.content
+
+		
